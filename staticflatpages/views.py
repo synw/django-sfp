@@ -1,9 +1,14 @@
 from django.template.loader import TemplateDoesNotExist
 from django.http import Http404
 from django.shortcuts import render
+from django.conf import settings
+
+
+HANDLE_HOMEPAGE = getattr(settings, "SFP_HANDLE_HOMEPAGE", False)
 
 
 def staticflatpage(request, path):
+    global HANDLE_HOMEPAGE
     """Load/render a template corresponding to the path (a URL)"""
     # Don't render a base.html template.
     if path.replace("/", '').lower() == "base":
@@ -15,9 +20,11 @@ def staticflatpage(request, path):
         path = path[:-1]
 
     # paths should be in the format: staticflatpages/path/from/url.html
-    path = "staticflatpages{0}.html".format(path)
+    template_path = "staticflatpages{0}.html".format(path)
+    if HANDLE_HOMEPAGE is True:
+        if path == "":
+            template_path = "staticflatpages/index.html"
     try:
-        return render(request, path)
+        return render(request, template_path)
     except TemplateDoesNotExist:
         raise Http404
-
