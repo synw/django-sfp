@@ -5,7 +5,7 @@ from django.utils.deprecation import MiddlewareMixin
 from .views import staticflatpage
 
 
-class StaticFlatpageFallbackMiddleware(MiddlewareMixin, object):
+class SfpFallbackMiddleware(MiddlewareMixin, object):
     def process_response(self, request, response):
         # Only check if there's a 404 for the original response
         if response.status_code != 404:
@@ -16,7 +16,7 @@ class StaticFlatpageFallbackMiddleware(MiddlewareMixin, object):
         # is a middleware, we can't assume the errors will be caught elsewhere.
         except Http404:
             return response
-        except:
+        except Exception:
             if settings.DEBUG:
                 raise
             return response

@@ -19,11 +19,11 @@ def staticflatpage(request, path):
     if path.endswith('/'):
         path = path[:-1]
 
-    # paths should be in the format: staticflatpages/path/from/url.html
-    template_path = "staticflatpages{0}.html".format(path)
+    # paths should be in the format: sfp/path/from/url.html
+    template_path = "pages{0}.html".format(path)
     if HANDLE_HOMEPAGE is True:
         if path == "":
-            template_path = "staticflatpages/index.html"
+            template_path = "pages/index.html"
     try:
         return render(request, template_path)
     except TemplateDoesNotExist:

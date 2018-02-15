@@ -1,20 +1,18 @@
 from setuptools import setup
-from staticflatpages import __version__
+from sfp import __version__
 
 setup(
-    name='django-staticflatpages',
+    name='django-sfp',
     version=__version__,
-    description="like flatpages, but with templates.",
+    description="Serve static pages from templates",
     long_description=open('README.rst').read(),
-    author='Brad Montgomery',
-    author_email='brad@bradmontgomery.net',
-    url='https://github.com/bradmontgomery/django-staticflatpages',
+    author_email='synwe@yahoo.com',
+    url='https://github.com/synw/django-sfp',
     license='MIT',
-    packages=['staticflatpages'],
+    packages=['sfp'],
     include_package_data=True,
     package_data={'': ['README.rst']},
     zip_safe=False,
-    install_requires=['django'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -22,13 +20,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]

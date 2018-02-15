@@ -2,7 +2,7 @@ import os
 from django.conf import settings
 from django.test import TestCase, modify_settings, override_settings
 
-from staticflatpages import util
+from .. import util
 
 
 def _test_template_dir():
@@ -29,10 +29,9 @@ TEST_TEMPLATES = [
 
 @override_settings(TEMPLATES=TEST_TEMPLATES)
 @modify_settings(MIDDELWARE={
-    'append': 'staticflatpages.middleware.StaticFlatpageFallbackMiddleware'
+    'append': 'sfp.middleware.SfpFallbackMiddleware'
 })
 class StaticFlatpageTests(TestCase):
-    urls = 'staticflatpages.tests.urls'
 
     def test_staticflatpage(self):
         """A staticflatpage will be served by the fallback middleware"""
@@ -54,7 +53,7 @@ class StaticFlatpageTests(TestCase):
 
 @override_settings(TEMPLATES=TEST_TEMPLATES)
 @modify_settings(MIDDELWARE={
-    'append': 'staticflatpages.middleware.StaticFlatpageFallbackMiddleware'
+    'append': 'sfp.middleware.SfpFallbackMiddleware'
 })
 class StaticFlatpageUtilTests(TestCase):
 

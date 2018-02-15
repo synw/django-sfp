@@ -40,11 +40,11 @@ def urls_from_file_tree(template_dir):
 
     # Should be somethign like:
     # /path/to/myproject/templates/staticflatpages
-    root_dir = join(template_dir, 'staticflatpages')
+    root_dir = join(template_dir, 'pages')
 
-    for root, dirs, files in walk(template_dir):
+    for root, _, files in walk(template_dir):
         # Only do this for the ``staticflatpages`` directory or sub-directories
-        if "staticflatpages" in root:
+        if "pages" in root:
             root = root.replace(root_dir, '')
             for f in files:
                 path = join(root, f)
@@ -58,6 +58,7 @@ class Url(object):
     ``items`` method.
 
     """
+
     def __init__(self, *args, **kwargs):
         self.url = ''
         if len(args) > 0:
