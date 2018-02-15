@@ -6,7 +6,8 @@ Django Sfp
 Serve flat pages from templates. Advantages:
 
 * No database hits
-* Keep your pages in a version control system
+* Keep the pages in a version control system
+* Edit the pages in an IDE
 
 Installation
 ------------
