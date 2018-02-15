@@ -9,6 +9,9 @@ Serve flat pages from templates. Advantages:
 * Keep the pages in a version control system
 * Edit the pages in an IDE
 
+Sfp stands for static flat pages. This is a fork of `django-staticflatpages <https://github.com/bradmontgomery/django-staticflatpages>`_ 
+to keep the code alive
+
 Installation
 ------------
 
