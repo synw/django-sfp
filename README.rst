@@ -43,6 +43,11 @@ To serve ``pages/index.html`` as homepage use this setting:
 
 ``SFP_HANDLE_HOMEPAGE = True``
 
+Autoreload
+----------
+
+To autoreload pages in browser during development you can use `django-autorelaoder <https://github.com/synw/django-autoreloader>`_
+
 Edit pages online
 -----------------
 
