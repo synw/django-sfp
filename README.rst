@@ -22,10 +22,9 @@ Install the latest release with pip:
 Configuration
 -------------
 
-Add ``"sfp",`` to your ``INSTALLED_APPS``.
+1. Add ``"sfp",`` to your ``INSTALLED_APPS``
 
-Add ``"sfp.middleware.SfpFallbackMiddleware",`` to your
-   ``MIDDLEWARE`` settings.
+2. Add ``"sfp.middleware.SfpFallbackMiddleware",`` to your ``MIDDLEWARE`` settings.
    
 Usage
 -----
