@@ -22,13 +22,18 @@ Install the latest release with pip:
 Configuration
 -------------
 
-1. Add ``sfp`` to your ``INSTALLED_APPS``.
-2. Add ``sfp.middleware.SfpFallbackMiddleware`` to your
+Add ``"sfp",`` to your ``INSTALLED_APPS``.
+
+Add ``"sfp.middleware.SfpFallbackMiddleware",`` to your
    ``MIDDLEWARE`` settings.
-3. Create a ``pages`` template directory. This should be a
-   subdirectory of one of the templates in your ``TEMPLATES`` setting. Any
-   templates you include here (except for a ``base.html``) will get served as
-   a static page.
+   
+Usage
+-----
+
+Create a ``pages`` template directory. This should be a
+subdirectory of one of the templates in your ``TEMPLATES`` setting. Any
+templates you include here (except for a ``base.html``) will get served as
+a static page.
 
 For example, assuming your project-level template directory is named
 "templates", then:
