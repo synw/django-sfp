@@ -40,6 +40,8 @@ Configuration
 
 4. Install the frontend:
 
+**Note**: Vuejs is supported out of the box but this can be adapted to any frontend
+
 Grab the `Page.vue` component:
 
    ```bash
