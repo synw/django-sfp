@@ -77,7 +77,7 @@ To make links: ``<router-link :to="{ name: 'Page', params: { 0: '/myurl' }}"></r
 Usage
 -----
 
-Create a ``pages`` in the Django project static directory. Any html file you include there will get served as
+Create a ``pages`` folder in the Django project static directory. Any html file you include there will get served as
 a static page.
 
 For example::
