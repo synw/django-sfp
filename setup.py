@@ -4,14 +4,14 @@ from sfp import __version__
 setup(
     name='django-sfp',
     version=__version__,
-    description="Serve static pages from templates",
-    long_description=open('README.rst').read(),
+    description="Serve static pages for a Vuejs frontend",
+    long_description=open('README.md').read(),
     author_email='synwe@yahoo.com',
     url='https://github.com/synw/django-sfp',
     license='MIT',
     packages=['sfp'],
     include_package_data=True,
-    package_data={'': ['README.rst']},
+    package_data={'': ['README.md']},
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -24,5 +24,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
-    ]
+    ],
+    install_requires=["graphene"],
 )
